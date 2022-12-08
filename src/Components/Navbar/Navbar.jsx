@@ -7,7 +7,7 @@ export default function Navbar({ userData, logOut }) {
       <nav className="navbar navbar-expand-lg  ">
         <div className="container-fluid text-white">
           <Link className="navbar-brand text-white" to="">
-            Movies
+            Noxe
           </Link>
           <button
             className="navbar-toggler bg-white"

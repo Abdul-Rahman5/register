@@ -3,6 +3,7 @@ import "./App.css";
 import "react-router-dom";
 import {
   createBrowserRouter,
+  createHashRouter,
   Navigate,
   RouterProvider,
 } from "react-router-dom";
@@ -37,7 +38,7 @@ function App() {
     let decodenToken = jwtDecode(encodenToken);
     setUserData(decodenToken);
   }
-  let router = createBrowserRouter([
+  let router = createHashRouter([
     {
       path: "",
       element: <Layout userData={userData} logOut={logOut} />,

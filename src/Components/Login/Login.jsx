@@ -20,7 +20,7 @@ export default function Login({ saveUserData }) {
   }
   async function sendUserDataToApi() {
     let { data } = await Axios.post(
-      `https://route-egypt-api.herokuapp.com/signin`,
+      `https://route-movies-api.vercel.app/signin`,
       user
     );
     if (data.message === "success") {
@@ -62,21 +62,6 @@ export default function Login({ saveUserData }) {
       ) : (
         ""
       )}
-      {/* {errorList.map((error, index) => {
-        if (error.context.label === "password") {
-          return (
-            <div key={index} className="alert py-1 alert-danger">
-              password must start with me upperCase....
-            </div>
-          );
-        } else {
-          return (
-            <div key={index} className="alert py-1 alert-danger">
-              {error.message}
-            </div>
-          );
-        }
-      })} */}
       <form onSubmit={submitLoginForm}>
         <label htmlFor="email">Email :</label>
         <input
@@ -87,7 +72,6 @@ export default function Login({ saveUserData }) {
           id="email"
         />
         <p className="text-danger">
-          {" "}
           {
             errorList.filter((error) => error.context.label === "email")[0]
               ?.message
@@ -102,11 +86,6 @@ export default function Login({ saveUserData }) {
           id="password"
         />
         <p className="text-danger">
-          {/* {" "}
-          {
-            errorList.filter((error) => error.context.label === "password")[0]
-              ?.message
-          } */}
           {errorList.map((error, index) => {
             if (error.context.label === "password") {
               return (
@@ -116,14 +95,8 @@ export default function Login({ saveUserData }) {
               );
             }
           })}
-        </p>{" "}
-        {/* <p className="text-danger">
-          {" "}
-          {
-            errorList.filter((error) => error.context.label === "password")[0]
-              ?.message
-          }{" "}
-        </p>{" "} */}
+        </p>
+       
         <button type="submit" className="btn btn-info">
           {loding ? <i className="fas  fa-spinner fa-spinn"></i> : "Login"}
         </button>

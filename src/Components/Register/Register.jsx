@@ -1,6 +1,7 @@
 import Axios from "axios";
 import Joi from "joi";
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
@@ -23,9 +24,10 @@ export default function Register() {
   }
   async function sendUserDataToApi() {
     let { data } = await Axios.post(
-      `https://route-egypt-api.herokuapp.com/signup`,
+      `https://route-movies-api.vercel.app/signup`,
       user
     );
+
     if (data.message === "success") {
       navigate("/login");
       setLoding(false);
@@ -39,11 +41,11 @@ export default function Register() {
     setLoding(true);
     let validation = validateRegisterForm();
     if (validation.error) {
-    setLoding(false);
+      setLoding(false);
 
       setErrorList(validation.error.details);
     } else {
-    setLoding(false);
+      setLoding(false);
       sendUserDataToApi();
     }
   }
@@ -74,6 +76,7 @@ export default function Register() {
           );
         }
       })} */}
+
       <form onSubmit={submitRegisterForm}>
         <label htmlFor="first_name">first_name :</label>
         <input

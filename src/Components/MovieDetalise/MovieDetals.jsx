@@ -48,27 +48,13 @@ export default function MovieDetals() {
           ) : (
             ""
           )}
-          {/* <img
-            src={`https://image.tmdb.org/t/p/w500${itemDetails.poster_path}`}
-            className="w-100"
-            alt=""
-          /> */}
+          
         </div>
         <div className="col-md-8">
           <h2>
             {itemDetails.title}
             {itemDetails.name}
           </h2>
-          {/* <button className="btn btn-info mx-2 my-2">
-            {" "}
-            {itemDetails.genres[0].name}{" "}
-          </button>
-          <button className="btn btn-info mx-2 my-2">
-            {" "}
-            {itemDetails.genres[1].name}{" "}
-          </button> */}
-          {/* <button className="btn btn-info mx-2 my-2"> {itemDetails.genres[2].name}</button> */}
-          {/* <p className=" fa-1x">{itemDetails.vote_average}</p> */}
           <p className=" lead mt-2">Vote : {itemDetails.vote_average}</p>
           <p className=" lead ">Vote Count : {itemDetails.vote_count}</p>
           <p className=" lead">popularity : {itemDetails.popularity}</p>
